@@ -7,6 +7,7 @@ Welcome to Bot-ensemble, where you can orchestrate your bot army with our state-
 - Mock databse
 
 ## Setup Installation🪛
+Follow the instructions below to run the app on your local environment:
 1. Execute the command `git clone https://github.com/Prodigysec/bot-ensemble` in your terminal to clone the repo.
 2. Navigate into the cloned directory byt executing `cd bot-ensemble`.
 3. Run `npm install` to install dependancies.
