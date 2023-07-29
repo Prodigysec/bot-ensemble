@@ -6,7 +6,16 @@ function BotArmy() {
     const { enlistedBots } = useBotContext();
 
     return (
-        
+        <div>
+            {enlistedBots.map((bot) => (
+                <BotProfile
+                    key={bot.id}
+                    bot={bot}
+                    enlisted={true} 
+                    isInBotArmy={true}
+                />
+            ))}
+        </div>
     );
 }
 
