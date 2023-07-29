@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useBotContext } from './BotContext';
+import '../componentStyles/styles.css';
 
 function BotProfile({ bot, enlisted, isInBotArmy }) {
     const { enlistBot, unenlistBot, deleteBot } = useBotContext();
@@ -27,10 +28,14 @@ function BotProfile({ bot, enlisted, isInBotArmy }) {
                 src={bot.avatar_url}
                 alt={bot.name}
                 onClick={handleClick}
-            />d
-            <h3>{bot.name}</h3>
-            <span>{bot.bot_class}</span>
-            <p>{bot.catchphrase}</p>
+            />
+            <div className='bot-details'>
+                <h3>{bot.name}</h3>
+                <span>{bot.bot_class}</span>
+            </div>
+            <small>Health:{bot.health}</small>
+            <small>Damage:{bot.health}</small>
+            <small>Armor:{bot.health}</small>
 
             {isInBotArmy && (
                 <button className="delete-button" onClick={handleDelete}>
