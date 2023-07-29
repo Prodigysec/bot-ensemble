@@ -14,7 +14,14 @@ export const useBotContext = () => {
 
 // create context provider
 export default function BotProvider({ children }) {
+    const [botData, setBotData] = useState([]);
+    const [enlistedBots, setEnlistedBots] = useState([]);
 
+    useEffect(() => {
+        fetch("http://localhost:3003/bots")
+            .then((res) => res.json())
+            .then((data) => setBotData(data))
+    }, [])
 }
 
 export { BotContext };
