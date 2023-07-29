@@ -7,7 +7,7 @@ function BotCollection() {
     const { botData, enlistedBots } = useBotContext();
 
     return (
-        <div>{
+        <div className='Bot-collection'>{
             botData.map((bot) => (
                 <BotProfile
                     key={bot.id}
