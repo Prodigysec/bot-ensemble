@@ -1,0 +1,23 @@
+/* App.js */
+h1 {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    margin: 20px;
+}
+
+.section1, .section2 {
+    flex-basis: 50%;
+    margin: 10px;
+}
+
+.container h2 {
+    text-align: center;
+}
+
+
+.section1 {
+    border: 2px solid rebeccapurple;
+}
