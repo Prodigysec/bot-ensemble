@@ -23,8 +23,14 @@ export default function BotProvider({ children }) {
         }
     };
 
-    // Callback function to unenlist a bot from the army
     const unenlistBot = (botId) => {
+        setEnlistedBots((prevEnlistedBots) => prevEnlistedBots.filter((bot) => bot.id !== botId));
+    };
+
+    const deleteBot = (botId) => {
+        fetch(`http://localhost:3003/bots/${botId}`, {
+            method: 'DELETE'
+        });
         setEnlistedBots((prevEnlistedBots) => prevEnlistedBots.filter((bot) => bot.id !== botId));
     };
 
