@@ -34,6 +34,14 @@ export default function BotProvider({ children }) {
         setEnlistedBots((prevEnlistedBots) => prevEnlistedBots.filter((bot) => bot.id !== botId));
     };
 
+    const values = {
+        botData,
+        enlistedBots,
+        enlistBot,
+        unenlistBot,
+        deleteBot,
+    };
+
     useEffect(() => {
         fetch("http://localhost:3003/bots")
             .then((res) => res.json())
