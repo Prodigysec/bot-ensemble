@@ -16,6 +16,10 @@ function BotProfile({ bot, enlisted, isInBotArmy }) {
         }
     }
 
+    function handleDelete() {
+        deleteBot(bot.id);
+    };
+
     return (
         <div className="bot-profile">
             <img
