@@ -17,11 +17,23 @@ export default function BotProvider({ children }) {
     const [botData, setBotData] = useState([]);
     const [enlistedBots, setEnlistedBots] = useState([]);
 
+    const enlistBot = (bot) => {
+        if (!enlistedBots.find((enlistedBot) => enlistedBot.id === bot.id)) {
+            setEnlistedBots((prevEnlistedBots) => [...prevEnlistedBots, bot]);
+        }
+    };
+
     useEffect(() => {
         fetch("http://localhost:3003/bots")
             .then((res) => res.json())
             .then((data) => setBotData(data))
     }, [])
+
+    return (
+        <BotContext.Provider value={values}>
+            {children}
+        </BotContext.Provider>
+    )
 }
 
 export { BotContext };
