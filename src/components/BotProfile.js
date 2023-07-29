@@ -1,8 +1,20 @@
 import React, { useState } from 'react';
 import { useBotContext } from './BotContext';
 
-function BotProfile({ bot, enlisted, isInBotArmy  }) {
+function BotProfile({ bot, enlisted, isInBotArmy }) {
     const { enlistBot, unenlistBot, deleteBot } = useBotContext();
+
+    function handleClick() {
+        if (isInBotArmy) {
+            unenlistBot(bot.id);
+        } else {
+            if (!enlisted) {
+                enlistBot(bot);
+            } else {
+                unenlistBot(bot.id);
+            }
+        }
+    }
 
     return (
         <div className="bot-profile">
