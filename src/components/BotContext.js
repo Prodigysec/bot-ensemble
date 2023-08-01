@@ -28,7 +28,7 @@ export default function BotProvider({ children }) {
     };
 
     const deleteBot = (botId) => {
-        fetch(`http://localhost:3003/bots/${botId}`, {
+        fetch(`https://botdata.onrender.com/bots/${botId}`, {
             method: 'DELETE'
         });
         setEnlistedBots((prevEnlistedBots) => prevEnlistedBots.filter((bot) => bot.id !== botId));
@@ -43,7 +43,7 @@ export default function BotProvider({ children }) {
     };
 
     useEffect(() => {
-        fetch("http://localhost:3003/bots")
+        fetch("https://botdata.onrender.com/bots")
             .then((res) => res.json())
             .then((data) => setBotData(data))
     }, [])
